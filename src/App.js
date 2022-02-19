@@ -1,10 +1,14 @@
 import React from "react";
+import { Header } from './components';
+
+import { Main } from './containers';
 
 const App = () => {
   return(
-    <div>
-      <h1>Chipmunk UI</h1>
-    </div>
+    <>
+      <Header/>
+      <Main/>
+    </>
   )
 };
 
