@@ -1,3 +1,64 @@
-.parent {
-  position: absolute;
+@mixin font-roboto-w($size) {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 500;
+  font-size: $size;
+  color: #ffffff;
+  text-decoration: none;
 }
+
+@mixin font-roboto-b($size) {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 500;
+  font-size: $size;
+  color: #000000;
+  text-decoration: none;
+}
+
+li, a {
+ @include font-roboto-b(16px)
+ 
+}
+
+.header {
+  @include font-roboto-b(16px);
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: #ffffff;
+  box-shadow: 0px -5px 10px #000000;
+}
+
+
+
+.nav_links {
+  list-style: none;
+  li {
+    display: inline-block;
+    padding: 0px 20px;
+    a {
+      transition: all 0.3s ease 0s;
+    }
+    a:hover {
+      color: rgb(0, 175, 219)
+    }
+  }
+}
+
+
+button {
+  @include font-roboto-w(16px);
+  padding: 9px 25px;
+  background-color: rgb(0, 175, 219);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(0, 162, 202, 1);
+}
+
