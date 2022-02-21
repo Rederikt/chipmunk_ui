@@ -1,27 +1,27 @@
 .paper {
   padding: 30px;
-  min-width: 550px;
   margin: 5%;
+  min-width: 320px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 5px 25px 2px rgba($color: #000000, $alpha: 0.3);
 }
-
 .flex-layout {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: space-between;
 }
 
 .data-box {
-  width: 70%;
   padding: 10px;
-  min-width: 500px;
+  min-width: 320px;
+  flex-grow:3;
   border: 1px solid black;
 }
 
 .menu-box {
-  width: 30%;
+  flex-grow: 1;
   padding: 10px;
   min-width: 300px;
   border: 1px solid black;
