@@ -12,16 +12,19 @@ export const Main = () => {
               <tr>
                 <th>Key</th>
                 <th>Value</th>
+                <th>#</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>s</td>
                 <td>ss</td>
+                <td>s</td>
               </tr>
               <tr>
-                <td>s</td>
-                <td>s</td>
+                <td className='text-field'><input type="text" name="input" id="input" className='text-field_input' placeholder='Input Key' /></td>
+                <td className='text-field'><input type="text" name="input" id="input" className='text-field_input' placeholder='Input Value' /></td>
+                <td><button className='button-9 small'>Add</button></td>
               </tr>
             </tbody>
           </table>
