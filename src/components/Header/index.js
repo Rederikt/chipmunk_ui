@@ -12,7 +12,7 @@ export const Header = () => {
           <li><a href="#">About</a></li>
         </ul>
       </nav>
-      <a className='btn' href=""><button>Get</button></a>
+      <a className='btn' href=""><button className='button_header'>Get</button></a>
     </div>
   )
 }
