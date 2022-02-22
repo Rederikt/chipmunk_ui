@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './main.scss'
 
 export const Main = () => {
+  const [key, setKey] = useState("");
+  const [value, setValue] = useState("");
+  const [error, setError] = useState(0);
+  const [findKey, setFindKey] = useState("");
+
+  const [entries, setEntries] = useState (
+    {
+      "Hello":"World",
+      "300":"bucks",
+      "sello":"Worlds",
+      "SSSSello":"World1",
+    }
+  )
+
+  const handleChangeKey = (event) => {
+    setKey(event.target.value)
+  }
+
+  const handleChangeValue = (event) => {
+    setValue(event.target.value)
+  }
+
+  const handleAdd = () => {
+    setEntries({
+      ...entries,
+      [key]:value
+    })
+    setKey('')
+    setValue('')
+
+  }
 
   return (
     <div className="paper">
@@ -16,18 +47,23 @@ export const Main = () => {
               </tr>
             </thead>
             <tbody>
+              {Object.entries(entries).map(([key, value], i) => 
+                <tr>
+                  <td>{key}</td>
+                  <td>{value}</td>
+                  <td>{i}</td>
+                </tr>
+              )}
               <tr>
-                <td>s</td>
-                <td>ss</td>
-                <td>s</td>
-              </tr>
-              <tr>
-                <td className='text-field'><input type="text" name="input" id="input" className='text-field_input' placeholder='Input Key' /></td>
-                <td className='text-field'><input type="text" name="input" id="input" className='text-field_input' placeholder='Input Value' /></td>
-                <td><button className='button-9 small'>Add</button></td>
+                <td className='text-field'><input type="text" name="input" id="input" className='text-field_input' placeholder='Input Key' value={key} onChange={handleChangeKey}/></td>
+                <td className='text-field'><input type="text" name="input" id="input" className='text-field_input' placeholder='Input Value' value={value} onChange={handleChangeValue}/></td>
+                <td><button className='button-9 small' onClick={handleAdd}>Add</button></td>
               </tr>
             </tbody>
           </table>
+          <div className='error'>
+            <span>Field can't be empty. Please enter some values.</span>
+          </div>
         </div>
         <div className="menu-box">
           <ul>
